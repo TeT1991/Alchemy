@@ -1,0 +1,63 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c0b4cf836b5d4e4b9f1694b70e33d05, type: 3}
+  m_Name: BaseRecipes
+  m_EditorClassIdentifier: 
+  _recipes:
+  - _ingredientA: {fileID: 11400000, guid: c30bcf73f549167488d75bc3fdbc3970, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 2b665dff575740b47af7303b75e18331, type: 2}
+    _result: {fileID: 11400000, guid: 741577def11599541b3562ed4265d4ae, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: a204f877394acb842829b49311e3cb18, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 2b665dff575740b47af7303b75e18331, type: 2}
+    _result: {fileID: 11400000, guid: 1cc0978643349854280b032144822f24, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: a204f877394acb842829b49311e3cb18, type: 2}
+    _ingredientB: {fileID: 11400000, guid: c30bcf73f549167488d75bc3fdbc3970, type: 2}
+    _result: {fileID: 11400000, guid: 7408bb48237af1a4095084f0cfc3a967, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 7408bb48237af1a4095084f0cfc3a967, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 22a163f309a4f8f41ac905cfb77c5a2c, type: 2}
+    _result: {fileID: 11400000, guid: 1dab8a3622fd6864eaee19b2aaa1454c, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 1dab8a3622fd6864eaee19b2aaa1454c, type: 2}
+    _ingredientB: {fileID: 11400000, guid: c30bcf73f549167488d75bc3fdbc3970, type: 2}
+    _result: {fileID: 11400000, guid: 0bfa2f740b067b545a5031a5806bde9b, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: c30bcf73f549167488d75bc3fdbc3970, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 22a163f309a4f8f41ac905cfb77c5a2c, type: 2}
+    _result: {fileID: 11400000, guid: 0d0e37a6f7bbf4d4cad9a07e038f0c2c, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 1cc0978643349854280b032144822f24, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 0d0e37a6f7bbf4d4cad9a07e038f0c2c, type: 2}
+    _result: {fileID: 11400000, guid: 7751bdf44a2820b44988cb41a09446a2, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 7751bdf44a2820b44988cb41a09446a2, type: 2}
+    _ingredientB: {fileID: 11400000, guid: a204f877394acb842829b49311e3cb18, type: 2}
+    _result: {fileID: 11400000, guid: 192a46f50fb2a2542a2c58ea32e859bf, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: a204f877394acb842829b49311e3cb18, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 0d0e37a6f7bbf4d4cad9a07e038f0c2c, type: 2}
+    _result: {fileID: 11400000, guid: 4ff8c5b3d0bb64441a3392ef598910d4, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 192a46f50fb2a2542a2c58ea32e859bf, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 4ff8c5b3d0bb64441a3392ef598910d4, type: 2}
+    _result: {fileID: 11400000, guid: 1ab97c849ce387c48bbdbd7ef33ce433, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 7751bdf44a2820b44988cb41a09446a2, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 2b665dff575740b47af7303b75e18331, type: 2}
+    _result: {fileID: 11400000, guid: 4e1a40b43c3e42943924ddd4f3a2fd52, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 4e1a40b43c3e42943924ddd4f3a2fd52, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 4ff8c5b3d0bb64441a3392ef598910d4, type: 2}
+    _result: {fileID: 11400000, guid: ddf844bff551aea43b350b50e9ae5628, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 1dab8a3622fd6864eaee19b2aaa1454c, type: 2}
+    _ingredientB: {fileID: 11400000, guid: ddf844bff551aea43b350b50e9ae5628, type: 2}
+    _result: {fileID: 11400000, guid: 4d47876708a57ff48b85808b23d1373d, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 1ab97c849ce387c48bbdbd7ef33ce433, type: 2}
+    _ingredientB: {fileID: 11400000, guid: ddf844bff551aea43b350b50e9ae5628, type: 2}
+    _result: {fileID: 11400000, guid: be3a671c962670640b73984f17e63786, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: 0d0e37a6f7bbf4d4cad9a07e038f0c2c, type: 2}
+    _ingredientB: {fileID: 11400000, guid: 0bfa2f740b067b545a5031a5806bde9b, type: 2}
+    _result: {fileID: 11400000, guid: 6a773e2c211d9604d96b83fdbb256f43, type: 2}
+  - _ingredientA: {fileID: 11400000, guid: be3a671c962670640b73984f17e63786, type: 2}
+    _ingredientB: {fileID: 11400000, guid: be3a671c962670640b73984f17e63786, type: 2}
+    _result: {fileID: 11400000, guid: 03fb7a1a154d4a24a928e1194d0b7e6b, type: 2}

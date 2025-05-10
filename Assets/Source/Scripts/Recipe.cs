@@ -10,18 +10,19 @@ public class Recipe
     public IReadOnlyList<ElementData> Ingredients => _ingredients;
     public ElementData Result => _result;
 
-    public bool Matches(IReadOnlyList<ElementData> inputElements)
+    // Сравнивает два набора элементов (без учёта порядка)
+    public bool Matches(params ElementData[] elements)
     {
-        if (inputElements.Count != _ingredients.Count) return false;
+        if (elements.Length != _ingredients.Count) return false;
 
-        var inputSet = new HashSet<ElementData>(inputElements);
+        var inputSet = new HashSet<ElementData>(elements);
         var recipeSet = new HashSet<ElementData>(_ingredients);
 
         return inputSet.SetEquals(recipeSet);
     }
 
-    public bool ContainsIngredient(ElementData element)
+    public bool ContainsIngredient(ElementData data)
     {
-        return _ingredients.Contains(element);
+        return _ingredients.Contains(data);
     }
 }

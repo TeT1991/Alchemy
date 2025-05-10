@@ -11,17 +11,17 @@ public class ElementCombiner
         _elementCollection = elementCollection;
     }
 
-    public CombinationResult TryCombine(List<ElementData> inputElements)
+    public CombinationResult TryCombine(List<ElementData> ingredients)
     {
-        var recipe = _recipeDatabase.FindMatch(inputElements);
+        var recipe = _recipeDatabase.FindMatch(ingredients.ToArray());
 
         if (recipe == null)
             return new CombinationResult(CombinationResultStatus.NoMatch);
 
         if (_elementCollection.IsDiscovered(recipe.Result))
         {
-            var existing = _elementCollection.GetElementById(recipe.Result.Id);
-            return new CombinationResult(CombinationResultStatus.AlreadyDiscovered, existing);
+            var existingElement = _elementCollection.GetElementById(recipe.Result.Id);
+            return new CombinationResult(CombinationResultStatus.AlreadyDiscovered, existingElement);
         }
 
         _elementCollection.TryAdd(recipe.Result, out var newElement);

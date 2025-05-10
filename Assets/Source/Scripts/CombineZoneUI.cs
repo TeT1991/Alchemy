@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -38,9 +39,6 @@ public class CombineZoneUI : MonoBehaviour
 
     public void SetElement(Element element)
     {
-        if (_selectedElements.Contains(element))
-            return;
-
         if (_selectedElements.Count >= _slotIcons.Count)
         {
             ShowMessage("Максимум 3 элемента. Очистите зону или нажмите 'Смешать'.");
@@ -62,14 +60,11 @@ public class CombineZoneUI : MonoBehaviour
     {
         if (_selectedElements.Count < 2)
         {
-            ShowMessage("Нужно минимум 2 элемента.");
+            ShowMessage("Выберите минимум 2 элемента!");
             return;
         }
 
-        var dataList = new List<ElementData>();
-        foreach (var e in _selectedElements)
-            dataList.Add(e.Data);
-
+        var dataList = _selectedElements.Select(e => e.Data).ToList();
         var result = _combiner.TryCombine(dataList);
 
         switch (result.Status)
@@ -102,15 +97,14 @@ public class CombineZoneUI : MonoBehaviour
         {
             if (i < _selectedElements.Count)
             {
-                var element = _selectedElements[i];
-                _slotIcons[i].sprite = element.Data.Icon;
+                _slotIcons[i].sprite = _selectedElements[i].Data.Icon;
                 _slotIcons[i].color = Color.white;
-                _slotLabels[i].text = element.Data.DisplayName;
+                _slotLabels[i].text = _selectedElements[i].Data.DisplayName;
             }
             else
             {
                 _slotIcons[i].sprite = _emptyIcon;
-                _slotIcons[i].color = new Color(1f, 1f, 1f, 0f);
+                _slotIcons[i].color = new Color(1f, 1f, 1f, 0f); // Прозрачный
                 _slotLabels[i].text = "";
             }
         }
@@ -136,3 +130,4 @@ public class CombineZoneUI : MonoBehaviour
         _resultText.text = message;
     }
 }
+

@@ -12,7 +12,6 @@ public class HintProvider : MonoBehaviour
         _collection = collection;
     }
 
-    // Получить подсказку: все ингредиенты известны, результат — нет
     public bool TryGetAnyHint(out Element[] elements)
     {
         foreach (var recipe in _recipes.Recipes)
@@ -20,21 +19,19 @@ public class HintProvider : MonoBehaviour
             if (_collection.IsDiscovered(recipe.Result))
                 continue;
 
-            bool allIngredientsDiscovered = recipe.Ingredients.All(i => _collection.IsDiscovered(i));
-            if (!allIngredientsDiscovered)
-                continue;
-
-            elements = recipe.Ingredients
-                .Select(i => _collection.GetElementById(i.Id))
-                .ToArray();
-            return true;
+            if (recipe.Ingredients.All(i => _collection.IsDiscovered(i)))
+            {
+                elements = recipe.Ingredients
+                    .Select(i => _collection.GetElementById(i.Id))
+                    .ToArray();
+                return true;
+            }
         }
 
         elements = null;
         return false;
     }
 
-    // Получить подсказку с опорой на один известный элемент
     public bool TryGetHintWith(Element known, out Element[] otherElements)
     {
         foreach (var recipe in _recipes.Recipes)
@@ -46,12 +43,9 @@ public class HintProvider : MonoBehaviour
                 continue;
 
             var result = new List<Element>();
-
             foreach (var ingredient in recipe.Ingredients)
             {
-                if (ingredient == known.Data)
-                    continue;
-
+                if (ingredient == known.Data) continue;
                 if (!_collection.IsDiscovered(ingredient))
                 {
                     otherElements = null;
